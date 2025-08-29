@@ -74,17 +74,3 @@ document.getElementById("clear_history").addEventListener("click",function(){
 
 
 // copy count section //
-let copyCount = 0;
-let copyButtons = document.getElementsByClassName("copy_button");
-
-for (let i = 0; i < copyButtons.length; i++) {
-  copyButtons[i].addEventListener("click", function() {
-    let neddedNumber = this.closest(".card").querySelector(".service_number").innerText;
-    navigator.clipboard.writeText(neddedNumber).then(()=>{
-       copyCount++;
-    document.getElementById("increase").innerText = copyCount;
-    alert("Number copied:" + "" + neddedNumber)
-    }).catch(err=>{})
-   
-  });
-}
